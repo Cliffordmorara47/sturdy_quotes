@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <h1>theeQuoteMaster Quotes</h1>
+    <small>It always seems impossible until it is done</small>
+</div>
+<div class="container">
+    <p class="intro">View some of the top quotes collection <br>Feel free to quote your own quote and post it in the
+        page</p>
+    <div class="row">
+        <div class="col-md-6">
+            <div *ngFor='let Quote of Quotes;let i = index'>
+                <div id="card">
+                    <div class="card">
+                        <h4>{{Quote.name}}</h4>
+                        <p>{{Quote.quote}}</p>
+                        <small>From the books of: {{Quote.author}}</small>
+                        <div class="icons">
+                            <span class="glyphicon glyphicon-thumbs-up btn btn-info btn-lg"
+                                (click)="upVote(Quote)"><i>like</i></span>
+                            <span class="glyphicon glyphicon-thumbs-up btn btn-info btn-lg"
+                                (click)="downVote(Quote)"><i>unlike</i></span>
+                        </div>
+                        <div class="votes">
+                            <span class="pr-5">{{ Quote.upVotes }}</span>
+                            <span class="pr-5">{{ Quote.downVotes }}</span>
+                        </div>
+                        <div class="myBtn">
+                            <button class="btn btn-danger" (click)="deleteQuote($event, i)">Delete Quote</button>
+                        </div>
+                        <!--  *ngIf='Quote.showDetails' [Quote]='Quote' -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <app-quote-form></app-quote-form>
+        </div>
+    </div>
+</div>
+<style>
+    .container-fluid {
+        text-align: center;
+        padding-bottom: 50px;
+        background-color: aqua;
+    }
+
+    .card {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .intro {
+        text-align: center;
+    }
+
+    .intro:hover {
+        color: rgb(53, 224, 31);
+    }
+
+    #card {
+        padding-top: 20px;
+    }
+
+    .card {
+        background-color: aquamarine;
+        padding-left: 30px
+    }
+
+    .card h4 {
+        padding-bottom: 20px;
+    }
+
+    .card small {
+        color: rgb(163, 62, 76);
+    }
+
+    .btn-info {
+        width: 12%;
+        font-size: 10px;
+        padding: 0px;
+    }
+
+    .images {
+        padding-top: 20px;
+    }
+
+    .btn-danger {
+        width: 25%;
+    }
+
+    .myBtn {
+        padding-left: 0px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+</style>
