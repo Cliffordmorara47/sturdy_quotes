@@ -1,6 +1,7 @@
 // import { Quote } from '@angular/compiler';
 // import { Quote } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+// import { globalAgent } from 'http';
 import { Quote } from '../quote'
 
 @Component({
@@ -34,6 +35,13 @@ export class QuoteComponent implements OnInit {
         this.Quotes.splice(index, 1)
       }
     }
+  }
+  addNewQuote(quote: any){
+    quote.name = quote.name;
+    quote.quote = quote.quote;
+    quote.author = quote.author;
+    quote.date = new Date(quote.date)
+    this.Quotes.unshift(quote)
   }
 
   constructor() { }
