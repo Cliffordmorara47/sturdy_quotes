@@ -23,7 +23,7 @@
                             <span class="pr-5">{{ Quote.upVotes }}</span>
                             <span class="pr-5">{{ Quote.downVotes }}</span>
                         </div>
-                        <small>{{Quote.daysPassed}}</small>
+                        <small>{{Quote.daysPassed|dateCount}} days ago</small>
                         <div class="myBtn">
                             <button class="btn btn-danger" (click)="deleteQuote($event, i)">Delete Quote</button>
                         </div>
