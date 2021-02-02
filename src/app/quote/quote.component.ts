@@ -1,7 +1,4 @@
-// import { Quote } from '@angular/compiler';
-// import { Quote } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-// import { globalAgent } from 'http';
 import { Quote } from '../quote'
 
 @Component({
