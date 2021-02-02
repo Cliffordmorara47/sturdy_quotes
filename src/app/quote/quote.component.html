@@ -10,8 +10,8 @@
             <div *ngFor='let Quote of Quotes;let i = index'>
                 <div id="card">
                     <div class="card">
-                        <h4>{{Quote.name}}</h4>
-                        <p>{{Quote.quote}}</p>
+                        <h4>{{Quote.category}}</h4>
+                        <p class="quote">{{Quote.quote}}</p>
                         <small>From the books of: {{Quote.author}}</small>
                         <div class="icons">
                             <span class="glyphicon glyphicon-thumbs-up btn btn-info btn-lg"
@@ -23,7 +23,7 @@
                             <span class="pr-5">{{ Quote.upVotes }}</span>
                             <span class="pr-5">{{ Quote.downVotes }}</span>
                         </div>
-                        <small>{{Quote.daysPassed|dateCount}} days ago</small>
+                        <small><i>Last Updated: {{Quote.daysPassed|dateCount}} days ago</i></small>
                         <div class="myBtn">
                             <button class="btn btn-danger" (click)="deleteQuote($event, i)">Delete Quote</button>
                         </div>
@@ -47,6 +47,13 @@
     .card {
         width: 100%;
         padding-top: 20px;
+    }
+    .quote{
+        font-weight: bolder;
+        font-style: italic;
+    }
+    .quote:hover{
+        font-style: normal;
     }
 
     .intro {
